@@ -16,13 +16,13 @@ class ApplicationController < Sinatra::Base
     
     if @user 
       session[:user_id] = @user.id
-      redirect "/account/#{@user.id}"
+      redirect "/account"
     else
       erb :error
     end
   end
 
-  get '/account/:id' do
+  get '/account' do
     @user = User.find_by(id: session[:user_id])
     if @user
       erb :account
