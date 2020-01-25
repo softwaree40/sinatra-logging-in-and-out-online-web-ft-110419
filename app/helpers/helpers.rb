@@ -1,7 +1,7 @@
 class Helpers
-  
+     #This method is to show current_user
   def self.current_user(session)
-    #binding.pry
+   # binding.pry
     User.find_by(id: session[:user_id])
      
   end
